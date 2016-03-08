@@ -1,0 +1,18 @@
+% Input data from directory 
+% Give function a varaible name, input data you wish to clip inside () 
+% 
+% Suppress your command, otherwise data will fly at you 
+%
+% Change how much you want to cut @ line 11, change 12 to whatever 
+% 
+% MTC 
+% Georgia State University 
+ 
+function CDF = CutDataFine(eegDataBlob)
+startIndex  = eegDataBlob.Fs*12; 
+ClippedeegDataBlob = eegDataBlob.data(startIndex:end, :); 
+output = eegDataBlob;
+output.data = ClippedeegDataBlob;
+CDF = output.data;
+
+end 
