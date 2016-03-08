@@ -9,8 +9,9 @@
 % Georgia State University 
  
 function CDF = CutDataFine(eegDataBlob)
+endIndex = eegDataBlob.Fs*133;
 startIndex  = eegDataBlob.Fs*12; 
-ClippedeegDataBlob = eegDataBlob.data(startIndex:end, :); 
+ClippedeegDataBlob = eegDataBlob.data(startIndex:endIndex, :); 
 output = eegDataBlob;
 output.data = ClippedeegDataBlob;
 CDF = output.data;
